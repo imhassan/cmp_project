@@ -1,0 +1,21 @@
+RewriteEngine on
+SetEnv CI_ENV development
+
+# <IfModule mod_rewrite.c>
+# 	#RewriteBase /sports/
+# 	#Redirect non-www to www
+# 	RewriteCond %{HTTP_HOST} ^tekstart.us [NC]
+# 	RewriteRule ^(.*)$ http://www.tekstart.us/sports/$1 [L,R=301,NC]
+# </IfModule>
+
+Options -Indexes
+		
+#Rules to block unneeded HTTP methods
+#RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE|DELETE|TRACK) [NC]
+#RewriteRule ^(.*)$ - [F]
+
+
+RewriteCond $1 !^(index\.php|assets|database|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]

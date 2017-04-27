@@ -1,0 +1,36 @@
+
+
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+assets/uploads/images/*
+!assets/uploads/images
+
+# IDE Files
+#-------------------------
+/.buildpath
+/.cache
+/.metadata
+/.project
+/.settings
+atlassian*
+/nbproject
+/sitemap
+/sitemap.xml
+/.idea
+/.gitattributes
+.DS_Store
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+
